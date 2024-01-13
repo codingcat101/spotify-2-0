@@ -1,0 +1,16 @@
+import Moralis from 'moralis';
+
+try {
+  await Moralis.start({
+    apiKey: "YOUR_API_KEY"
+  });
+
+  const response = Moralis.SolApi.token.getTokenPrice({
+    "network": "mainnet",
+    "address": "SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt"
+  });
+
+  console.log(response.raw);
+} catch (e) {
+  console.error(e);
+}
